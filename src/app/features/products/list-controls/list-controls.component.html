@@ -1,0 +1,38 @@
+<div class="container">
+  <mat-card>
+    <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" class="container">
+      <div fxFlex="20">
+        Avalailable Deals: {{ $totalProducts | async }}
+      </div>
+      <div fxFlex="80"
+           fxLayoutAlign="end center"
+           fxLayoutGap="32px"
+           fxLayout="row" class="container__list-controls">
+        <div class="container__list-controls__ui-design" fxLayout="row" fxLayoutAlign="center center">
+          <button mat-icon-button color="primary" aria-label="Example icon button with a home icon"
+                  (click)="changeListType(productListTypes.GRID_TYPE)">
+            <mat-icon>view_module</mat-icon>
+          </button>
+          <button mat-icon-button color="primary" aria-label="Example icon button with a home icon"
+                  (click)="changeListType(productListTypes.LIST_TYPE)">
+            <mat-icon>view_list</mat-icon>
+          </button>
+        </div>
+        <div fxLayout="row"
+             class="container__list-controls__sort"
+             fxLayoutGap="16px"
+             fxLayoutAlign="center center">
+          <span>Sort results: </span>
+          <mat-form-field>
+            <mat-select [formControl]="sortSelected">
+              <mat-option *ngFor="let sortType of sortTypes" [value]="sortType">
+                {{sortType.toString()}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+
+</div>

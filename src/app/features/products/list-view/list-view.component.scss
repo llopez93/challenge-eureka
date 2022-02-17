@@ -1,0 +1,29 @@
+.card-wrapper {
+  padding: 32px;
+}
+
+.product-wrapper {
+  &__image {
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    margin-right: 48px;
+
+    img {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+    }
+  }
+
+  &__title {
+    h1 {
+      text-align: center;
+    }
+    margin-bottom: 24px;
+  }
+
+  &__product-type {
+    margin-bottom: 16px;
+  }
+}

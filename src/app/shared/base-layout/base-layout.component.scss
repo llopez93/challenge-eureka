@@ -1,0 +1,22 @@
+.layout-wrapper {
+
+  &__nav-container {
+    height: 80px;
+    background-color: #fafafa;
+    border-bottom: 2px solid #a7a7a9;
+  }
+
+  &__main-container {
+    height: calc(100vh - 82px);
+
+    &__sidebar-container {
+      background-color: #fafafa;
+      margin-right: 16px;
+      border-right: 2px solid #a7a7a9;
+    }
+
+    &__content {
+      overflow-x: scroll;
+    }
+  }
+}

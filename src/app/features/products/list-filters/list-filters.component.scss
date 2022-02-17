@@ -1,0 +1,26 @@
+.container {
+
+  h2 {
+    text-align: center;
+    margin: 24px 0;
+    padding-bottom: 24px;
+  }
+
+  &__filters {
+    padding: 0 8px;
+
+    p {
+      margin: 16px 8px;
+      font-weight: 500;
+    }
+
+    mat-checkbox {
+      margin: 4px 0 4px 16px;
+    }
+
+    mat-slider, &__range-labels {
+      margin: auto;
+      width: 85%;
+    }
+  }
+}

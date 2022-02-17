@@ -1,0 +1,28 @@
+<app-base-layout>
+  <div navContent>
+    <h1>
+      Welcome to Mum's Deals Page
+    </h1>
+  </div>
+
+  <div mainContent>
+    <div *ngIf="($fetchPending | async); else elseTemplate"
+    class="spinner-container"
+    fxLayout="column" fxLayoutAlign="center center">
+      <mat-spinner></mat-spinner>
+    </div>
+    <ng-template #elseTemplate>
+      <div>
+        <app-list-controls></app-list-controls>
+      </div>
+      <div [ngSwitch]="($listType | async)">
+        <app-grid-view *ngSwitchCase="productListTypes.GRID_TYPE"></app-grid-view>
+        <app-list-view *ngSwitchCase="productListTypes.LIST_TYPE"></app-list-view>
+      </div>
+    </ng-template>
+  </div>
+
+  <div sidebarContent>
+    <app-list-filters></app-list-filters>
+  </div>
+</app-base-layout>

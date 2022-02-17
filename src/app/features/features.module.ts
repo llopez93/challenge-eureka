@@ -9,6 +9,9 @@ import {ProductsModule} from "./products/products.module";
   imports: [
     ProductsModule,
     CommonModule
+  ],
+  exports: [
+    ProductsModule
   ]
 })
 export class FeaturesModule { }

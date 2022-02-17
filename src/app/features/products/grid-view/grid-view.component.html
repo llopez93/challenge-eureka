@@ -1,0 +1,31 @@
+<div fxLayout="row wrap" fxLayoutAlign="start center">
+  <div class="card-wrapper"
+       *ngFor="let p of ($products | async)"
+       fxFlex.sm="100"
+       fxFlex.md="50"
+       fxFlex.lg="33.3"
+       fxFlex.xl="25">
+    <mat-card>
+      <div class="product-wrapper">
+        <div class="product-wrapper__image">
+          <img [src]="p.image">
+        </div>
+        <div class="product-wrapper__title">
+          <h1>
+            {{ p.title }}
+          </h1>
+        </div>
+        <div class="product-wrapper__product-type">
+          <p>
+            Product type: <strong>{{ p.productType }}</strong>
+          </p>
+        </div>
+        <div class="product-wrapper__product-quantity">
+          <p>
+            Quantity Sold: {{ p.quantitySold }}
+          </p>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

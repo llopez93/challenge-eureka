@@ -1,0 +1,13 @@
+<div class="layout-wrapper">
+  <div class="layout-wrapper__nav-container" fxLayoutAlign="center center">
+    <ng-content select="[navContent]"></ng-content>
+  </div>
+  <div class="layout-wrapper__main-container" fxLayout="row">
+    <div class="layout-wrapper__main-container__sidebar-container" fxFlex="20">
+        <ng-content select="[sidebarContent]"></ng-content>
+    </div>
+    <div class="layout-wrapper__main-container__content" fxFlex="80">
+      <ng-content select="[mainContent]"></ng-content>
+    </div>
+  </div>
+</div>

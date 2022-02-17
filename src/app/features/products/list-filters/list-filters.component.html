@@ -1,0 +1,50 @@
+<div class="container">
+  <h2>
+    Filter results
+  </h2>
+  <div class="container__filters" fxLayout="column" [formGroup]="filtersForm">
+
+    <p>
+      Product types
+    </p>
+
+    <div formGroupName="productTypes" fxLayout="column">
+
+      <mat-checkbox *ngFor="let name of formControlsNames"
+                    formControlName="{{name}}">
+        {{ name }}
+      </mat-checkbox>
+
+    </div>
+    <p>
+      Price Range
+    </p>
+    <mat-slider formControlName="priceSelected"
+                *ngIf="priceRange"
+                [min]="priceRange.min"
+                [step]="2"
+                [thumbLabel]="true"
+                [max]="priceRange.max"></mat-slider>
+    <div
+      *ngIf="priceRange"
+      class="container__filters__range-labels"
+      fxLayout="row"
+      fxLayoutAlign="space-between center">
+      <span>
+        {{priceRange.min}}
+      </span>
+      <span>
+        {{priceRange.max}}
+      </span>
+    </div>
+
+    <button
+      *ngIf="($filtersSetted | async)"
+      (click)="cleanFilters()"
+      mat-stroked-button
+      color="warn">
+      Clean filters
+    </button>
+  </div>
+
+</div>
